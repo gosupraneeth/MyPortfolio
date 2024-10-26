@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* Ensure the html and body occupy the entire viewport */
+html, body {
+    height: 100%;       /* Set height to 100% of the viewport */
+    margin: 0;          /* Remove default margins */
+    padding: 0;         /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Additional styling for body */
+body {
+    width: 100%;        /* Set width to 100% of the viewport */
+    display: flex;      /* Optional: Use flexbox for child alignment */
+    align-items: center; /* Optional: Center content vertically */
+    justify-content: center; /* Optional: Center content horizontally */
+    background-color: #f0f0f0; /* Optional: Background color */
+}

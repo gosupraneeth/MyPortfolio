@@ -1,1 +1,40 @@
-
+/* Make the div occupy the entire screen */
+.full-screen-div {
+    width: 100vw;  /* 100% of the viewport width */
+    height: 100vh; /* 100% of the viewport height */
+    margin: 0;     /* Remove default margins */
+    padding: 0;    /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    background-image: url('src/assets/images/table_laptop_2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.full-screen-div::before {
+    content: "";                   /* Create an empty content block */
+    /* position: absolute;            */
+    top: 0;                        /* Stretch from top */
+    left: 0;                       /* Stretch from left */
+    right: 0;                      /* Stretch from right */
+    bottom: 0;                     /* Stretch from bottom */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    z-index: 1;                    /* Ensure it sits below the text */
+}
+.text-content {
+    position: relative;            /* Position the text relative to the overlay */
+    z-index: 2;                    /* Ensure it sits above the overlay */
+    color: white;                  /* Make the text white for contrast */
+    text-align: center;            /* Center the text horizontally */
+    padding: 20px;                 /* Add padding around the text */
+    max-width: 800px;              /* Optional: Limit the width of the text content */
+    margin: auto;                  /* Center the content */
+    top: 50%;                      /* Center the text vertically */
+    transform: translateY(-50%);   /* Adjust the vertical centering */
+    h1 {
+        font-family: cursive;
+        font-size: 50px;
+    }
+    p{
+        font-family: fantasy;
+    }
+}
