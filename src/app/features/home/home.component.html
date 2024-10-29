@@ -1,14 +1,18 @@
-<div class="full-screen-div">
-    <div class="text-content">
-        <div class="text-content-sub1">
-            Hi, I'm
+<div class="home-div" #scrollableElement>
+    <div class="full-screen-div">
+        <div class="text-content">
+            <div class="text-content-sub1">
+                Hi, I'm
+            </div>
+            <h1>Gosu Praneeth</h1>
+            <p>Software Engineer at Cisco India</p>
+            <app-outline-button
+            [style]="'font-family:fantasy'"
+            [btn_varient]="'light'"
+            [value]="'About Me'"
+            (onClick)="handleButtonClick('about-me')"
+            ></app-outline-button>
         </div>
-        <h1>Gosu Praneeth</h1>
-        <p>Software Engineer at Cisco India</p>
-        <app-outline-button
-        [style]="'font-family:fantasy'"
-        [btn_varient]="'light'"
-        [value]="'About Me'"
-        ></app-outline-button>
     </div>
+    <app-about-me></app-about-me>
 </div>

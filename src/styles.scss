@@ -5,6 +5,7 @@ html, body {
     margin: 0;          /* Remove default margins */
     padding: 0;         /* Remove default padding */
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    scrollbar-width: none;
 }
 
 /* Additional styling for body */
@@ -14,4 +15,7 @@ body {
     align-items: center; /* Optional: Center content vertically */
     justify-content: center; /* Optional: Center content horizontally */
     background-color: #f0f0f0; /* Optional: Background color */
+}
+::-webkit-scrollbar {
+    display: none;
 }

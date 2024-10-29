@@ -17,7 +17,25 @@
   "sourceRoot": "src",
   "prefix": "app",
   "targets": {
+    "copy-site-elements": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          "cp -rf 'node_modules/@phosphor-icons/webcomponents/dist/index.es.js' 'src/assets/phosphor-icons/'"
+        ]
+      }
+    },
     "build": {
+      "dependsOn": [
+        {
+          "target": "copy-site-elements",
+          "projects": "self"
+        },
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ],
       "executor": "@angular-devkit/build-angular:browser",
       "options": {
         "outputPath": "dist/my-portfolio",
@@ -68,6 +86,16 @@
       ]
     },
     "serve": {
+      "dependsOn": [
+        {
+          "target": "copy-site-elements",
+          "projects": "self"
+        },
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ],
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {

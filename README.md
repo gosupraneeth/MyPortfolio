@@ -30,3 +30,38 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 [1] https://codepen.io/Nayan-Ladumor/pen/pomzjYY
 [2] https://codepen.io/varadmadhvani1/pen/WNWWXQW
+
+
+## structure of the app
+```
+src/
+│
+├── app/
+│   ├── core/                       # CoreModule: Global singleton services and core components
+│   │   ├── services/               # Services with singleton scope
+│   │   ├── guards/                 # Route guards for authorization and authentication
+│   │   └── interceptors/           # HTTP interceptors for request/response manipulation
+│   │
+│   ├── shared/                     # SharedModule: Shared components, directives, and pipes
+│   │   ├── components/             # Reusable components
+│   │   ├── directives/             # Custom directives
+│   │   └── pipes/                  # Custom pipes
+│   │
+│   ├── features/                   # FeatureModules: Each feature gets its own module
+│   │   ├── home/                   # Home feature module
+│   │   ├── about/                  # About feature module
+│   │   ├── portfolio/              # Portfolio feature module
+│   │   ├── contact/                # Contact feature module
+│   │   ├── blog/                   # Optional: Blog feature module (if included)
+│   │   ├── not-found/              # Not-found (404) page module
+│   │   └── feature-routing.module.ts # Routing module for features
+│   │
+│   ├── app.component.ts            # Main app component
+│   ├── app.component.html          # Main app template
+│   ├── app.module.ts               # Root app module
+│   ├── app.routes.ts               # Routes configuration
+│   ├── app.config.ts               # App-wide configuration
+│   └── app-routing.module.ts       # Root routing module
+│
+└── assets/                         # Static assets (images, fonts, etc.)
+```

@@ -1,0 +1,97 @@
+.about-me{
+    padding-top: 50px;
+    margin-top: 50px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    z-index: 1;
+    height: 100vh;
+    &-div{
+        padding-left: 48px;
+        padding-right: 48px;
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+    }
+    &-card{
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        background-color: rgb(178 178 178); // #9ed9bc
+        box-sizing: border-box;
+        display: inline-block;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        vertical-align: top;
+        width: 36.666667%;
+        &-div1{
+            margin: 3%;
+            &-img{
+                width: 150px;       /* Adjust the width as needed */
+                height: 150px;      /* Adjust the height as needed */
+                object-fit: cover;  /* Ensures the image covers the circle area */
+                border-radius: 50%; /* Makes the image circular */
+            }
+        }
+        &-div2{
+            margin: 2% 3%;
+            padding: 3%;
+            span{
+                font-family: fantasy;
+                font-size: xx-large;
+            }
+        }
+        &-div3{
+            display: inline-flex;
+            box-sizing: border-box;
+            border-top: var(--lnw, 2px) solid rgba(var(--brd, var(--color_15)), var(--alpha-brd, 1));
+            --color_18: 0, 80, 255;
+            --lnw: 2px;
+            --brd: var(--color_18);
+            --alpha-brd: 1;
+            transform-origin: center 1px;
+            width: 100px;
+            height: 5px;
+        }
+        &-div4{
+            margin: 2% 3%;
+            padding: 3%;
+            span{
+                font-family: fantasy;
+                font-size: larger;
+            }
+        }
+        &-div5{
+            padding: 25px 0 ;
+            background-color: rgb(236, 236, 236);
+            &-logo{
+                cursor: pointer;
+                margin: 0 15px;
+            }
+        }
+    }
+    &-details{
+        width: 58.3333333333%;
+        box-sizing: border-box;
+        display: inline-block;
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+        vertical-align: top;
+        &-text{
+            text-align: left;
+            font-family: 'Comic Neue';
+            line-height: 1.5;
+            padding: 20px;
+            padding-left: 30px;
+        }
+        &-heading{
+            font-family: 'Montserrat';
+            font-size: 34px;
+        }
+    }
+}

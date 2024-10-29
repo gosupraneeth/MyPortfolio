@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { style } from '@angular/animations';
 
@@ -31,5 +31,10 @@ export class OutlineButtonComponent {
       this.btn_class_type = 'btn-outline-primary';
     }
   }
+  @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
   btn_class_type = 'btn-outline-light';
+
+  handleButtonClick(event: any){
+    this.onClick.emit();
+  }
 }

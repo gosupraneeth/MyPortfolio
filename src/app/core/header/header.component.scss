@@ -10,6 +10,10 @@
         white-space: nowrap;
         width: 100%;
         z-index: 20;
+        &.scrolled {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+            background-color: rgb(39 38 43 / 89%);
+        }
         &-div{
             display: table;
             min-width: 100%;
