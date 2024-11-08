@@ -1,0 +1,56 @@
+:host{
+    .photo-card{
+        max-width: 550px;
+        &-items{
+            padding-left: 3.75%;
+            padding-right: 3.75%;
+            &-shadow{
+                padding: 3.75%;
+                border-radius: 8px;
+                box-shadow: 0 3px 13px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
+                &:hover{
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                    cursor: pointer;
+                }
+            }
+            &-div1{
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: 1280px;
+                text-align: center;
+                &-imgdiv{
+                    width: 100%;
+                    background-color: black;
+                    align-items: center;
+                    display: flex;
+                    height: 365px;
+                    overflow: hidden;
+                }
+                &-img{
+                    width: 100%;
+                }
+            }
+            &-div2{
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: 1280px;
+                text-align: center;
+                padding: 5% 0%;
+                &-span{
+                    padding: 14px 8px;
+                    font-family: 'Comic Neue';
+                    font-size: 25px;
+                }
+            }
+            &-div3{
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 0;
+                max-width: 1280px;
+                text-align: center;
+            }
+        }
+    }
+}

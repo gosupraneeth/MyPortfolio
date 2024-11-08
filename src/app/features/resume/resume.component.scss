@@ -1,0 +1,22 @@
+:host{
+    width: 100%;
+    .resume{
+        margin-top: 50px;
+        width: 100%;
+        &-section{
+            position: relative;            
+            z-index: 1;                    
+            padding: 20px;                 
+            max-width: 1100px;
+            &-heading{
+                font-family: 'Comic Neue';
+                font-size: 35px;
+                margin: 3% 0%;
+            }
+            &-items{
+                display: flex;
+                flex-wrap: wrap;
+            }           
+        }
+    }
+}
