@@ -4,27 +4,29 @@
             <span>Experience</span>
         </div>
         <div class="resume-section-items">
-            <app-photo-card
-                [width]="'33%'"
-                [img_height]="'250px'"
-                [title]="'Cisco pvt limited'"
-                [description]="'I work here since 1 year, I am working as software engineer'"
-                [source]="'./../../../assets/images/cisco_logo.webp'"
-            ></app-photo-card>
-            <app-photo-card
-                [width]="'33%'"
-                [img_height]="'250px'"
-                [title]="'GE HealthCare'"
-                [description]="'I work here since 1 year, I am working as software engineer'"
-                [source]="'./../../../assets/images/GE_logo.jpg'"
-            ></app-photo-card>
-            <app-photo-card
-                [width]="'33%'"
-                [img_height]="'250px'"
-                [title]="'IIIT Hyderabad'"
-                [description]="'I work here since 1 year, I am working as software engineer'"
-                [source]="'./../../../assets/images/iiith_logo.jpeg'"
-            ></app-photo-card>
+            <ng-container *ngFor="let item of experience">
+                <app-photo-card
+                [width]="item.width"
+                [img_height]="item.img_height"
+                [title]="item.title"
+                [description]="item.description"
+                [source]="item.img_source"
+                ></app-photo-card>
+            </ng-container>
+        </div>
+    </section>
+    <section class="resume-section">
+        <div class="resume-section-heading">
+            <span>Education</span>
+        </div>
+        <div class="resume-section-items">
+            <ng-container *ngFor="let item of experience">
+                <app-photo-card
+                [width]="'100%'"
+                [img_height]="item.img_height"
+                [source]="item.img_source"
+                ></app-photo-card>
+            </ng-container>
         </div>
     </section>
 </div>

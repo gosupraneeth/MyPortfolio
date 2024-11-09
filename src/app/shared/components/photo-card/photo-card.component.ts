@@ -24,16 +24,16 @@ export class PhotoCardComponent implements AfterViewInit{
   @ViewChild('img') myImage!: ElementRef;
 
   ngAfterViewInit(): void {
-    const parentElement = this.parent.nativeElement;
     const imgElement = this.myImage.nativeElement;
-    console.log(parentElement,imgElement);
-
-    // Get the dimensions of the parent element
-    const parentWidth = parentElement.clientWidth;
-    const parentHeight = parentElement.clientHeight;
 
     // Load the image and calculate aspect ratio
     imgElement.onload = () => {
+      const parentElement = this.parent.nativeElement;
+
+      // Get the dimensions of the parent element
+      const parentWidth = parentElement.clientWidth;
+      const parentHeight = parentElement.clientHeight;
+      
       const imgNaturalWidth = imgElement.naturalWidth;
       const imgNaturalHeight = imgElement.naturalHeight;
 
