@@ -2,6 +2,7 @@
     <section class="resume-section">
         <div class="resume-section-heading">
             <span>Experience</span>
+            <span class="line"></span>
         </div>
         <div class="resume-section-items">
             <ng-container *ngFor="let item of experience">
@@ -15,18 +16,126 @@
             </ng-container>
         </div>
     </section>
-    <section class="resume-section">
+    <section class="resume-section resume-section-styled-left" style="background-color: #fce8e6;">
         <div class="resume-section-heading">
             <span>Education</span>
+            <span class="line"></span>
+        </div>
+        <div class="resume-section-edu-items">
+            <div class="resume-section-edu-box">
+                <div class="resume-section-edu-box-item">
+                    <div class="resume-section-edu-box-item-img">
+                        <img src="./../../../assets/images/NITK_PNG_LOGO.png" alt="NITK LOGO">
+                    </div>
+                    <div class="resume-section-edu-box-item-desc">
+                        <span class="resume-section-edu-box-item-desc-heading">National Institute of Technology Karnataka, Surathkal</span>
+                        <p>
+                            B.Tech in Information Technology<br/>
+                            CGPA : 8.72    <br/>
+                            NH 66, Srinivasnagar, Surathkal, Mangalore, Karnataka 575025</p>
+                            <div class="resume-section-edu-box-item-desc-date">
+                                <span>2019 - 2023</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-section-edu-box">
+                <div class="resume-section-edu-box-item">
+                    <div class="resume-section-edu-box-item-img">
+                        <img src="./../../../assets/images/Newvisionlogo.png" alt="NITK LOGO">
+                    </div>
+                    <div class="resume-section-edu-box-item-desc">
+                        <span class="resume-section-edu-box-item-desc-heading">New Vision Juniour College</span>
+                        <p>
+                            Higher Secondary Graduate<br/>
+                            Percentage : 96.4%<br/>
+                            Khammam Bypass Rd, Indira Nagar, Indira Nagar Colony, Khammam, Telangana 507002</p>
+                            <div class="resume-section-edu-box-item-desc-date">
+                                <span>2017 - 2019</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="resume-section-edu-box-item">
+                    <div class="resume-section-edu-box-item-img">
+                        <img src="./../../../assets/images/Newvisionlogo.png" alt="NITK LOGO">
+                    </div>
+                    <div class="resume-section-edu-box-item-desc">
+                        <span class="resume-section-edu-box-item-desc-heading">New Vision the Olympiad School</span>
+                        <p>
+                            Secondary Education<br/>
+                            GPA : 9.8<br/>
+                            Khammam Bypass Rd, Indira Nagar, Indira Nagar Colony, Khammam, Telangana 507002</p>
+                        <div class="resume-section-edu-box-item-desc-date">
+                            <span>Completed in 2017</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="resume-section">
+        <div class="resume-section-heading">
+            <span>Certificates</span>
+            <span class="line"></span>
         </div>
         <div class="resume-section-items">
-            <ng-container *ngFor="let item of experience">
-                <app-photo-card
-                [width]="'100%'"
-                [img_height]="item.img_height"
-                [source]="item.img_source"
-                ></app-photo-card>
-            </ng-container>
+            Here Carosal of the certificates will come
+            Reference https://wearos.google.com/
+        </div>
+    </section>
+    <section class="resume-section">
+        <div class="resume-section-heading">
+            <span>Projects</span>
+            <span class="line"></span>
+        </div>
+        <div class="resume-section-items" style="flex-direction: column;">
+            <div class="resume-section-project-box resume-section-styled-left project-styled-left" style="background-color: #e8f0fe;">
+                <div class="resume-section-project-box-item">
+                    <div class="resume-section-project-box-item-img">
+                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
+                    </div>
+                    <div class="resume-section-project-box-item-desc">
+                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
+                        <p>
+                            In this project a user can control his PC using simple and friendly hand gestures.</p>
+                            <div class="resume-section-project-box-item-desc-date">
+                                <span>2019 - 2023</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-section-project-box resume-section-styled-right project-styled-right" style="background-color: #fef7e0;">
+                <div class="resume-section-project-box-item">
+                    <div class="resume-section-project-box-item-desc">
+                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
+                        <p>
+                            In this project a user can control his PC using simple and friendly hand gestures.</p>
+                            <div class="resume-section-project-box-item-desc-date">
+                                <span>2019 - 2023</span>
+                            </div>
+                    </div>
+                    <div class="resume-section-project-box-item-img">
+                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-section-project-box resume-section-styled-left project-styled-left" style="background-color: #e6f4ea;">
+                <div class="resume-section-project-box-item">
+                    <div class="resume-section-project-box-item-img">
+                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
+                    </div>
+                    <div class="resume-section-project-box-item-desc">
+                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
+                        <p>
+                            In this project a user can control his PC using simple and friendly hand gestures.</p>
+                            <div class="resume-section-project-box-item-desc-date">
+                                <span>2019 - 2023</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>

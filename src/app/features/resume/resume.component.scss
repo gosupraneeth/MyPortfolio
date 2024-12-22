@@ -2,12 +2,29 @@
     width: 100%;
     .resume{
         margin-top: 50px;
-        width: 100%;
+        // width: 80%;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-self: center;
+        // justify-content: center;
         &-section{
             position: relative;            
             z-index: 1;                    
-            padding: 20px;                 
-            max-width: 1100px;
+            padding: 20px 10%;   
+            width: 80%; 
+            margin-bottom: 10%;             
+            // max-width: 1100px;
+            &-styled-left{
+                padding-right: 20px;
+                border-radius: 0px 40px 40px 0px;
+                margin-bottom: 5%;
+            }
+            &-styled-right{
+                padding-left: 20px;
+                border-radius: 40px 0px 0px 40px;
+                margin-bottom: 5%;
+            }
             &-heading{
                 font-family: 'Comic Neue';
                 font-size: 35px;
@@ -15,8 +32,109 @@
             }
             &-items{
                 display: flex;
-                flex-wrap: wrap;
-            }           
+                justify-content: space-evenly;
+            }  
+            &-edu-box{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &-item{
+                    border: 1px solid #cacaca;
+                    border-radius: 60px;
+                    padding: 24px;
+                    display: flex;
+                    flex-direction: row;
+                    max-width: 50%;
+                    margin: 20px;
+                    &-img{
+                        padding: 10px;
+                        width: 40%;
+                        align-self: center;
+                        img{
+                            width: 165px;
+                            border-radius: 10px;
+                        }
+                    }
+                    &-desc{
+                        margin-left: 20px;
+                        &-heading{
+                            padding: 14px 0px;
+                            font-family: "Montserrat";
+                            font-size: 25px;
+                        }
+                        p{
+                            font-family: 'Comic Neue';
+                            color: #5f6368;
+                        }
+                        &-date{
+                            float: right;
+                            span{
+                                font-family: "Montserrat";
+                                color: #F85C70;
+                            }
+                        }
+                    }
+                }
+            }   
+            &-project-box{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                &-item{
+                    padding: 24px;
+                    display: flex;
+                    flex-direction: row;
+                    margin: 20px;
+                    &-img{
+                        padding: 10px;
+                        align-self: center;
+                        img{
+                            width: 100%;
+                            border-radius: 10px;
+                            &:hover{
+                                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    &-desc{
+                        margin-left: 20px;
+                        width: 35%;
+                        padding: 10%;
+                        &-heading{
+                            padding: 14px 0px;
+                            font-family: "Montserrat";
+                            font-size: 25px;
+                        }
+                        p{
+                            font-family: 'Comic Neue';
+                            color: #5f6368;
+                        }
+                        &-date{
+                            float: right;
+                            span{
+                                font-family: "Montserrat";
+                                color: #F85C70;
+                            }
+                        }
+                    }
+                }
+            }      
         }
+    }
+    .project-styled-left{
+        margin-right: 20%;
+    }
+    .project-styled-right{
+        margin-left: 20%;
+    }
+    .line {
+        display: block;
+        width: 25px;
+        height: 1.5px;
+        background-color: #F85C70;
     }
 }
