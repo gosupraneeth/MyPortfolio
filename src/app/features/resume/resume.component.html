@@ -22,52 +22,17 @@
             <span class="line"></span>
         </div>
         <div class="resume-section-edu-items">
-            <div class="resume-section-edu-box">
-                <div class="resume-section-edu-box-item">
+            <div class="resume-section-edu-box" *ngFor="let key of education | keyvalue">
+                <div class="resume-section-edu-box-item" *ngFor="let item of key.value">
                     <div class="resume-section-edu-box-item-img">
-                        <img src="./../../../assets/images/NITK_PNG_LOGO.png" alt="NITK LOGO">
+                        <img src="{{item.img_source}}" alt="{{item.img_alt}}">
                     </div>
                     <div class="resume-section-edu-box-item-desc">
-                        <span class="resume-section-edu-box-item-desc-heading">National Institute of Technology Karnataka, Surathkal</span>
-                        <p>
-                            B.Tech in Information Technology<br/>
-                            CGPA : 8.72    <br/>
-                            NH 66, Srinivasnagar, Surathkal, Mangalore, Karnataka 575025</p>
+                        <span class="resume-section-edu-box-item-desc-heading">{{item.title}}</span>
+                        <p [innerHTML]="item.description"></p>
                             <div class="resume-section-edu-box-item-desc-date">
-                                <span>2019 - 2023</span>
+                                <span>{{item.date}}</span>
                             </div>
-                    </div>
-                </div>
-            </div>
-            <div class="resume-section-edu-box">
-                <div class="resume-section-edu-box-item">
-                    <div class="resume-section-edu-box-item-img">
-                        <img src="./../../../assets/images/Newvisionlogo.png" alt="NITK LOGO">
-                    </div>
-                    <div class="resume-section-edu-box-item-desc">
-                        <span class="resume-section-edu-box-item-desc-heading">New Vision Juniour College</span>
-                        <p>
-                            Higher Secondary Graduate<br/>
-                            Percentage : 96.4%<br/>
-                            Khammam Bypass Rd, Indira Nagar, Indira Nagar Colony, Khammam, Telangana 507002</p>
-                            <div class="resume-section-edu-box-item-desc-date">
-                                <span>2017 - 2019</span>
-                            </div>
-                    </div>
-                </div>
-                <div class="resume-section-edu-box-item">
-                    <div class="resume-section-edu-box-item-img">
-                        <img src="./../../../assets/images/Newvisionlogo.png" alt="NITK LOGO">
-                    </div>
-                    <div class="resume-section-edu-box-item-desc">
-                        <span class="resume-section-edu-box-item-desc-heading">New Vision the Olympiad School</span>
-                        <p>
-                            Secondary Education<br/>
-                            GPA : 9.8<br/>
-                            Khammam Bypass Rd, Indira Nagar, Indira Nagar Colony, Khammam, Telangana 507002</p>
-                        <div class="resume-section-edu-box-item-desc-date">
-                            <span>Completed in 2017</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -89,51 +54,32 @@
             <span class="line"></span>
         </div>
         <div class="resume-section-items" style="flex-direction: column;">
-            <div class="resume-section-project-box resume-section-styled-left project-styled-left" style="background-color: #e8f0fe;">
+            <div class="resume-section-project-box resume-section-styled-{{item.align_side}} project-styled-{{item.align_side}}" [style]="item.bg_color" *ngFor="let item of projects">
                 <div class="resume-section-project-box-item">
-                    <div class="resume-section-project-box-item-img">
-                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
-                    </div>
-                    <div class="resume-section-project-box-item-desc">
-                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
-                        <p>
-                            In this project a user can control his PC using simple and friendly hand gestures.</p>
-                            <div class="resume-section-project-box-item-desc-date">
-                                <span>2019 - 2023</span>
-                            </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="resume-section-project-box resume-section-styled-right project-styled-right" style="background-color: #fef7e0;">
-                <div class="resume-section-project-box-item">
-                    <div class="resume-section-project-box-item-desc">
-                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
-                        <p>
-                            In this project a user can control his PC using simple and friendly hand gestures.</p>
-                            <div class="resume-section-project-box-item-desc-date">
-                                <span>2019 - 2023</span>
-                            </div>
-                    </div>
-                    <div class="resume-section-project-box-item-img">
-                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
-                    </div>
-                </div>
-            </div>
-
-            <div class="resume-section-project-box resume-section-styled-left project-styled-left" style="background-color: #e6f4ea;">
-                <div class="resume-section-project-box-item">
-                    <div class="resume-section-project-box-item-img">
-                        <img src="./../../../assets/images/gif6.gif" alt="NITK LOGO">
-                    </div>
-                    <div class="resume-section-project-box-item-desc">
-                        <span class="resume-section-project-box-item-desc-heading">Vision-based Hand Gesture Interface for Real-time Computer Operation Control</span>
-                        <p>
-                            In this project a user can control his PC using simple and friendly hand gestures.</p>
-                            <div class="resume-section-project-box-item-desc-date">
-                                <span>2019 - 2023</span>
-                            </div>
-                    </div>
+                    <ng-container *ngIf="item.align_side==='left'; else rightAlignment">
+                        <div class="resume-section-project-box-item-img">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}">
+                        </div>
+                        <div class="resume-section-project-box-item-desc">
+                            <span class="resume-section-project-box-item-desc-heading">{{item.title}}</span>
+                            <p>{{item.description}}</p>
+                                <div class="resume-section-project-box-item-desc-date">
+                                    <span>{{item.date}}</span>
+                                </div>
+                        </div>
+                    </ng-container>
+                    <ng-template #rightAlignment>
+                        <div class="resume-section-project-box-item-desc">
+                            <span class="resume-section-project-box-item-desc-heading">{{item.title}}</span>
+                            <p>{{item.description}}</p>
+                                <div class="resume-section-project-box-item-desc-date">
+                                    <span>{{item.date}}</span>
+                                </div>
+                        </div>
+                        <div class="resume-section-project-box-item-img">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}">
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
