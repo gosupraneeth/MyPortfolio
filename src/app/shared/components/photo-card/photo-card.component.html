@@ -1,6 +1,6 @@
 <div class="photo-card">
     <div class="photo-card-items">
-        <div class="photo-card-items-shadow">
+        <div class="photo-card-items-shadow" (click)="cardClicked()">
             <div #imgdiv class="photo-card-items-div1">
                 <div class="photo-card-items-div1-imgdiv" [style]="style">
                     <img #img src="{{source}}" alt="{{source}}" class="photo-card-items-div1-img">

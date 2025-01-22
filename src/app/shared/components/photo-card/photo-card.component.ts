@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, HostBinding, Input, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostBinding, Input, Output, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -22,6 +22,7 @@ export class PhotoCardComponent implements AfterViewInit{
   @HostBinding('style.width') hostwidth: string = '33%';
   @ViewChild('imgdiv') parent!: ElementRef;
   @ViewChild('img') myImage!: ElementRef;
+  @Output() onCardClick: EventEmitter<any> = new EventEmitter<any>();
 
   ngAfterViewInit(): void {
     const imgElement = this.myImage.nativeElement;
@@ -57,5 +58,8 @@ export class PhotoCardComponent implements AfterViewInit{
   }
   updateWidth(newWidth: string){
     this.hostwidth = newWidth;
+  }
+  cardClicked(){
+    this.onCardClick.emit()
   }
 }

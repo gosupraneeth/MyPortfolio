@@ -1,0 +1,14 @@
+<div class="modal" #modal>
+    <div class="modal-overlay"></div>
+    <div class="modal-panel">
+        <div class="modal-panel-header"> <span part="title">This is the heading</span></div>
+        <div class="modal-panel-body"><div class="content">
+            <ng-content></ng-content>
+        </div></div>
+        <div class="modal-panel-footer">
+            <div class="footer-content">
+                <app-outline-button [value]="'Close'" [btn_varient]="'primary'" (onClick)="onClose()"></app-outline-button>
+            </div>
+        </div>
+    </div>
+</div>

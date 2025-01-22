@@ -12,6 +12,7 @@
                 [title]="item.title"
                 [description]="item.description"
                 [source]="item.img_source"
+                (onCardClick)="onPhotoCardClick()"
                 ></app-photo-card>
             </ng-container>
         </div>
@@ -58,7 +59,7 @@
                 <div class="resume-section-project-box-item">
                     <ng-container *ngIf="item.align_side==='left'; else rightAlignment">
                         <div class="resume-section-project-box-item-img">
-                            <img src="{{item.img_src}}" alt="{{item.img_alt}}">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject()">
                         </div>
                         <div class="resume-section-project-box-item-desc">
                             <span class="resume-section-project-box-item-desc-heading">{{item.title}}</span>
@@ -77,7 +78,7 @@
                                 </div>
                         </div>
                         <div class="resume-section-project-box-item-img">
-                            <img src="{{item.img_src}}" alt="{{item.img_alt}}">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject()">
                         </div>
                     </ng-template>
                 </div>
@@ -85,3 +86,7 @@
         </div>
     </section>
 </div>
+
+<app-modal
+[isOpen]="isModalOpen"
+(onModalClose)="onModalClose()"></app-modal>

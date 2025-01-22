@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 import { PhotoCardComponent } from 'src/app/shared/components/photo-card/photo-card.component';
 import { ScrollService } from 'src/app/core/services/scroll.service';
 import { HorizontalCardComponent } from 'src/app/shared/components/horizontal-card/horizontal-card.component';
+import { ModalComponent } from "../../shared/components/modal/modal.component";
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [CommonModule, PhotoCardComponent, HorizontalCardComponent],
+  imports: [CommonModule, PhotoCardComponent, HorizontalCardComponent, ModalComponent],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit{
   constructor(private scrollService: ScrollService){}
+  isModalOpen = false;
   experience = [
     {
       title: 'Cisco pvt limited',
@@ -101,8 +103,44 @@ export class ResumeComponent implements OnInit{
       img_alt: 'project gif',
       date: '2019 - 2023'
     },
+    {
+      align_side: 'left',
+      bg_color: 'background-color: #f4f0fc',
+      title: 'Movie Review Application with Chatbot',
+      description: 'This is a web application that gives suggestions about movies to the user based on his activity, it also has a chatbot where it suggests movies based on mood he has, language and genre he prefers.',
+      img_src: './../../../assets/images/projects/movie_review.gif',
+      img_alt: 'project gif',
+      date: '2019 - 2023'
+    },
+    {
+      align_side: 'right',
+      bg_color: 'background-color: #f9f0e8',
+      title: 'Minesweeper',
+      description: 'This project is an AI that can play Minesweeper.',
+      img_src: './../../../assets/images/projects/minesweeper.gif',
+      img_alt: 'project gif',
+      date: '2019 - 2023'
+    },
+    {
+      align_side: 'left',
+      bg_color: 'background-color: #eaf6f9',
+      title: 'Uno-Morse-Conversie',
+      description: 'This project aims to convert the morse code to text and also converts to speech.',
+      img_src: './../../../assets/images/projects/uno_morse_conversie.gif',
+      img_alt: 'project gif',
+      date: '2019 - 2023'
+    },
   ];
   ngOnInit(): void {
     this.scrollService.scrolled.emit(1);
+  }
+  onModalClose(){
+    this.isModalOpen = false;
+  }
+  onPhotoCardClick(){
+    this.isModalOpen = true;
+  }
+  onClickingProject(){
+    this.isModalOpen = true;
   }
 }
