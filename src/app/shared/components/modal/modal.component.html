@@ -1,7 +1,7 @@
 <div class="modal" #modal>
-    <div class="modal-overlay"></div>
+    <div class="modal-overlay" (click)="onClose()"></div>
     <div class="modal-panel">
-        <div class="modal-panel-header"> <span part="title">This is the heading</span></div>
+        <div class="modal-panel-header"> <span part="title">{{heading}}</span></div>
         <div class="modal-panel-body"><div class="content">
             <ng-content></ng-content>
         </div></div>

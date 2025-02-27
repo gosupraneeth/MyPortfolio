@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhotoCardComponent } from 'src/app/shared/components/photo-card/photo-card.component';
 import { ScrollService } from 'src/app/core/services/scroll.service';
@@ -9,30 +9,47 @@ import { ModalComponent } from "../../shared/components/modal/modal.component";
   selector: 'app-resume',
   standalone: true,
   imports: [CommonModule, PhotoCardComponent, HorizontalCardComponent, ModalComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.scss']
 })
 export class ResumeComponent implements OnInit{
   constructor(private scrollService: ScrollService){}
   isModalOpen = false;
+  modalValues = {
+    heading: '',
+    address: '',
+    description: '',
+    img_source: '',
+    is_project: false,
+  }
   experience = [
     {
+      id: 'cisco',
       title: 'Cisco pvt limited',
       description: 'I work here since 1 year, I am working as software engineer',
+      modal_desc: 'In this Internship, I worked under S Bapi Raju professor from IIITH, with the guidance of a Ph.D. scholar Project is building a chess engine using the Reinforcement Learning concepts that think like a human. My work is to fetch the data from lichess using API and clean and analyse it and to plot the data. This work presented at ACCS 8th Annual Conference Of Cognitive Science 2022 (paper id 21)',
+      address: 'Wipro GE Healthcare Pvt. Ltd John F. Welch Technology Centre No.122, EPIP Phase 2, Whitefield Road Bangalore, Karnataka, IN - 560067',
       img_source: './../../../assets/images/experience/cisco_logo.webp',
       img_height: '250px',
       width: '363px'
     },
     {
+      id: 'ge_healthcare',
       title: 'GE HealthCare',
       description: 'I work here since 1 year, I am working as software engineer',
+      modal_desc: 'In this Internship, I worked under S Bapi Raju professor from IIITH, with the guidance of a Ph.D. scholar Project is building a chess engine using the Reinforcement Learning concepts that think like a human. My work is to fetch the data from lichess using API and clean and analyse it and to plot the data. This work presented at ACCS 8th Annual Conference Of Cognitive Science 2022 (paper id 21)',
+      address: 'Wipro GE Healthcare Pvt. Ltd John F. Welch Technology Centre No.122, EPIP Phase 2, Whitefield Road Bangalore, Karnataka, IN - 560067',
       img_source: './../../../assets/images/experience/GE_logo.jpg',
       img_height: '250px',
       width: '363px'
     },
     {
+      id: 'iiit_hyd',
       title: 'IIIT Hyderabad',
       description: 'I work here since 1 year, I am working as software engineer',
+      modal_desc: 'In this Internship, I worked under S Bapi Raju professor from IIITH, with the guidance of a Ph.D. scholar Project is building a chess engine using the Reinforcement Learning concepts that think like a human. My work is to fetch the data from lichess using API and clean and analyse it and to plot the data. This work presented at ACCS 8th Annual Conference Of Cognitive Science 2022 (paper id 21)',
+      address: 'Wipro GE Healthcare Pvt. Ltd John F. Welch Technology Centre No.122, EPIP Phase 2, Whitefield Road Bangalore, Karnataka, IN - 560067',
       img_source: './../../../assets/images/experience/iiith_logo.jpeg',
       img_height: '250px',
       width: '363px'
@@ -137,10 +154,17 @@ export class ResumeComponent implements OnInit{
   onModalClose(){
     this.isModalOpen = false;
   }
-  onPhotoCardClick(){
+  onPhotoCardClick(event: any){
+    console.log(event);
+    this.modalValues.is_project = false;
+    this.modalValues.heading = event.title;
+    this.modalValues.description = event.modal_desc;
+    this.modalValues.address = event.address;
+    this.modalValues.img_source = event.img_source;
     this.isModalOpen = true;
   }
   onClickingProject(){
+    this.modalValues.is_project = true;
     this.isModalOpen = true;
   }
 }

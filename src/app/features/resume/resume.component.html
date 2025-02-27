@@ -12,7 +12,8 @@
                 [title]="item.title"
                 [description]="item.description"
                 [source]="item.img_source"
-                (onCardClick)="onPhotoCardClick()"
+                [itemId]="item.id"
+                (onCardClick)="onPhotoCardClick(item)"
                 ></app-photo-card>
             </ng-container>
         </div>
@@ -45,7 +46,7 @@
             <span class="line"></span>
         </div>
         <div class="resume-section-items">
-            Here Carosal of the certificates will come
+            Here Carousel of the certificates will come
             Reference https://wearos.google.com/
         </div>
     </section>
@@ -89,4 +90,62 @@
 
 <app-modal
 [isOpen]="isModalOpen"
-(onModalClose)="onModalClose()"></app-modal>
+[heading]="modalValues.heading"
+(onModalClose)="onModalClose()">
+<div class="resume-modal">
+    <div class="resume-modal-imgdiv" [style]="'height:250px'">
+        <img #img src="{{modalValues.img_source}}" alt="cisco logo" class="resume-modal-img">
+    </div>
+    <div class="resume-modal-address">
+        <span>{{modalValues.address}}</span>
+    </div>
+    <div class="resume-modal-description">
+        <div class="resume-section-heading">
+            <span style="font-size: 24px;">Details</span>
+            <span class="line"></span>
+        </div>
+        <div class="resume-modal-description-details">
+            {{modalValues.description}}
+        </div>
+        <div class="resume-modal-description-project" *ngIf="modalValues.is_project">
+            <div class="resume-section-heading">
+                <span style="font-size: 24px;">Tools Used</span>
+                <span class="line"></span>
+            </div>
+            <div class="resume-modal-description-details">
+                <span>Mediapipe, DNN, Pyautogui</span>
+            </div>
+            <div class="resume-section-heading">
+                <span style="font-size: 24px;">Important Links</span>
+                <span class="line"></span>
+            </div>
+            <div class="resume-modal-description-details">
+                <div>
+                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-github-logo
+                        class="link-logos"
+                        size="20"
+                        color="#646C75"
+                        weight="bold"
+                        name="github logo"></ph-github-logo> Link to the code</a>
+                </div>
+                <div>
+                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-certificate
+                        class="link-logos"
+                        size="20"
+                        color="#646C75"
+                        weight="bold"
+                        name="certificate logo"></ph-certificate> Link to the publication certificate</a>
+                </div>
+                <div>
+                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-article
+                        class="link-logos"
+                        size="20"
+                        color="#646C75"
+                        weight="bold"
+                        name="certificate logo"></ph-article> Link to the published article</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</app-modal>

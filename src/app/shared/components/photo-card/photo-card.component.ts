@@ -12,6 +12,7 @@ export class PhotoCardComponent implements AfterViewInit{
   @Input() source: string | undefined;
   @Input() title: string | undefined;
   @Input() description: string | undefined;
+  @Input() itemId: string | undefined;
   @Input() set width(val: string){
     this.updateWidth(val);
   }
@@ -60,6 +61,6 @@ export class PhotoCardComponent implements AfterViewInit{
     this.hostwidth = newWidth;
   }
   cardClicked(){
-    this.onCardClick.emit()
+    this.onCardClick.emit();
   }
 }

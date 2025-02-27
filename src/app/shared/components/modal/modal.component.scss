@@ -14,11 +14,12 @@
             transition: 300ms opacity;
         }
         &-panel{
-            width: 850px;
+            width: 1024px;
             display: flex;
             flex-direction: column;
             z-index: 2;
             min-height: 0px;
+            max-height: 830px;
             background-color: white;
             border-radius: 0.57rem;
             box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
@@ -32,15 +33,15 @@
                 position: relative;
                 span{
                     padding: 1.5rem 1.5rem 1rem 1.5rem;
-                    font-weight: 700;
-                    font-size: 1.5rem;
+                    font-weight: 500;
+                    font-size: 32px;
                     color: #373C42;
-                    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                    font-family: "Montserrat";
                 }
             }
             &-body{
                 font-size: 14px;
-                padding: 0px 1.50rem 1.50rem 1.50rem;
+                padding: 0px 3.50rem 2.50rem 3.50rem;
                 flex: 1 1 auto;
                 overflow: auto;
                 color: #23282E;
@@ -66,5 +67,11 @@
         display: flex;
         opacity: 1;
         transform: none;
+    }
+    .line {
+        display: block;
+        width: 25px;
+        height: 1.5px;
+        background-color: #F85C70;
     }
 }

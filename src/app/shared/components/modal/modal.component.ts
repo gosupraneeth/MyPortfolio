@@ -11,6 +11,7 @@ import { OutlineButtonComponent } from "../outline-button/outline-button.compone
 })
 export class ModalComponent implements OnChanges, AfterViewInit{
   @Input() isOpen: boolean = false;
+  @Input() heading: string = 'This is the Heading';
   @ViewChild('modal') modal: any;
   @Output() onModalClose: EventEmitter<any> = new EventEmitter<any>();
 

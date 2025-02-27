@@ -125,6 +125,39 @@
                 }
             }      
         }
+        &-modal{
+            padding: 8px;
+            &-imgdiv{
+                margin: 14px 0px;
+                width: 50%;
+                align-items: center;
+                display: flex;
+                height: 365px;
+                overflow: hidden;
+                justify-self: center;
+            }
+            &-img{
+                width: 100%;
+                border-radius: 8px;
+            }
+            &-address{
+                text-align: center;
+                font-family: "Comic Neue";
+            }
+            &-description{
+                &-details{
+                    line-height: 2;
+                    word-spacing: 5px;
+                    font-size: 16px;
+                    text-indent: 2rem;
+                    font-family: "Red Hat Display";
+                    a{
+                        color: #F85C70;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
     }
     .project-styled-left{
         margin-right: 20%;
@@ -137,5 +170,10 @@
         width: 25px;
         height: 1.5px;
         background-color: #F85C70;
+    }
+    ::ng-deep{
+        .link-logos svg{
+            margin-bottom: -2px;
+        }
     }
 }
