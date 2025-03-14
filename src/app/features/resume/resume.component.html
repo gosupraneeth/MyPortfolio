@@ -11,7 +11,7 @@
                 [img_height]="item.img_height"
                 [title]="item.title"
                 [description]="item.description"
-                [source]="item.img_source"
+                [source]="item.img_src"
                 [itemId]="item.id"
                 (onCardClick)="onPhotoCardClick(item)"
                 ></app-photo-card>
@@ -27,7 +27,7 @@
             <div class="resume-section-edu-box" *ngFor="let key of education | keyvalue">
                 <div class="resume-section-edu-box-item" *ngFor="let item of key.value">
                     <div class="resume-section-edu-box-item-img">
-                        <img src="{{item.img_source}}" alt="{{item.img_alt}}">
+                        <img src="{{item.img_src}}" alt="{{item.img_alt}}">
                     </div>
                     <div class="resume-section-edu-box-item-desc">
                         <span class="resume-section-edu-box-item-desc-heading">{{item.title}}</span>
@@ -40,7 +40,7 @@
             </div>
         </div>
     </section>
-    <section class="resume-section">
+    <!-- <section class="resume-section">
         <div class="resume-section-heading">
             <span>Certificates</span>
             <span class="line"></span>
@@ -49,7 +49,7 @@
             Here Carousel of the certificates will come
             Reference https://wearos.google.com/
         </div>
-    </section>
+    </section> -->
     <section class="resume-section">
         <div class="resume-section-heading">
             <span>Projects</span>
@@ -60,7 +60,7 @@
                 <div class="resume-section-project-box-item">
                     <ng-container *ngIf="item.align_side==='left'; else rightAlignment">
                         <div class="resume-section-project-box-item-img">
-                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject()">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject(item)">
                         </div>
                         <div class="resume-section-project-box-item-desc">
                             <span class="resume-section-project-box-item-desc-heading">{{item.title}}</span>
@@ -79,7 +79,7 @@
                                 </div>
                         </div>
                         <div class="resume-section-project-box-item-img">
-                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject()">
+                            <img src="{{item.img_src}}" alt="{{item.img_alt}}" (click)="onClickingProject(item)">
                         </div>
                     </ng-template>
                 </div>
@@ -90,14 +90,14 @@
 
 <app-modal
 [isOpen]="isModalOpen"
-[heading]="modalValues.heading"
+[heading]="modalValues.title"
 (onModalClose)="onModalClose()">
 <div class="resume-modal">
     <div class="resume-modal-imgdiv" [style]="'height:250px'">
-        <img #img src="{{modalValues.img_source}}" alt="cisco logo" class="resume-modal-img">
+        <img #img src="{{modalValues.img_src}}" alt="{{modalValues.img_alt}}" class="resume-modal-img">
     </div>
     <div class="resume-modal-address">
-        <span>{{modalValues.address}}</span>
+        <span>{{modalValues.img_desc}}</span>
     </div>
     <div class="resume-modal-description">
         <div class="resume-section-heading">
@@ -105,44 +105,49 @@
             <span class="line"></span>
         </div>
         <div class="resume-modal-description-details">
-            {{modalValues.description}}
+            <ul *ngIf="modalValues.detailed_desc.length>1; else stringDesc">
+                <li *ngFor="let descr of modalValues.detailed_desc">{{descr}}</li>
+            </ul>
+            <ng-template #stringDesc>
+                <span>{{modalValues.detailed_desc}}</span>
+            </ng-template>
         </div>
         <div class="resume-modal-description-project" *ngIf="modalValues.is_project">
             <div class="resume-section-heading">
-                <span style="font-size: 24px;">Tools Used</span>
+                <span style="font-size: 24px;">Keywords</span>
                 <span class="line"></span>
             </div>
             <div class="resume-modal-description-details">
-                <span>Mediapipe, DNN, Pyautogui</span>
+                <span>{{modalValues.tools_used}}</span>
             </div>
             <div class="resume-section-heading">
                 <span style="font-size: 24px;">Important Links</span>
                 <span class="line"></span>
             </div>
             <div class="resume-modal-description-details">
-                <div>
-                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-github-logo
+                <div *ngIf="modalValues.code_link">
+                    <a href="{{modalValues.code_link}}" target="_blank"> <ph-github-logo
                         class="link-logos"
                         size="20"
                         color="#646C75"
                         weight="bold"
                         name="github logo"></ph-github-logo> Link to the code</a>
                 </div>
-                <div>
-                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-certificate
+                <div *ngIf="modalValues.article_link">
+                    <a href="{{modalValues.article_link}}" target="_blank"> <ph-article
+                        class="link-logos"
+                        size="20"
+                        color="#646C75"
+                        weight="bold"
+                        name="article logo"></ph-article> Link to the published article</a>
+                </div>
+                <div *ngIf="modalValues.certificate_link">
+                    <a href={{modalValues.certificate_link}} target="_blank"> <ph-certificate
                         class="link-logos"
                         size="20"
                         color="#646C75"
                         weight="bold"
                         name="certificate logo"></ph-certificate> Link to the publication certificate</a>
-                </div>
-                <div>
-                    <a href="https://github.com/gosupraneeth/Computer_Operations_Using_Hand_Gestures"> <ph-article
-                        class="link-logos"
-                        size="20"
-                        color="#646C75"
-                        weight="bold"
-                        name="certificate logo"></ph-article> Link to the published article</a>
                 </div>
             </div>
         </div>
