@@ -65,3 +65,7 @@ src/
 │
 └── assets/                         # Static assets (images, fonts, etc.)
 ```
+
+## Important deployment commands
+- `nx build --base-href="https://gosupraneeth.github.io/MyPortfolio/"`
+- `npx angular-cli-ghpages --dir=dist/my-portfolio`
