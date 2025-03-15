@@ -9,35 +9,34 @@ import { OutlineButtonComponent } from "../outline-button/outline-button.compone
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnChanges, AfterViewInit{
+export class ModalComponent implements OnChanges, AfterViewInit {
   @Input() isOpen: boolean = false;
   @Input() heading: string = 'This is the Heading';
   @ViewChild('modal') modal: any;
   @Output() onModalClose: EventEmitter<any> = new EventEmitter<any>();
 
-  ngAfterViewInit(){
-    if(this.isOpen){
+  ngAfterViewInit() {
+    this.toggleBodyScroll();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if ('isOpen' in changes && changes['isOpen'].currentValue !== changes['isOpen'].previousValue && !changes['isOpen'].firstChange) {
+      this.toggleBodyScroll();
+    }
+  }
+
+  toggleBodyScroll() {
+    if (this.isOpen) {
+      document.body.classList.add('modal-open');
       this.modal.nativeElement.classList.add('modal-open');
       this.modal.nativeElement.style.display = 'flex';
-    }else{
+    } else {
+      document.body.classList.remove('modal-open');
       this.modal.nativeElement.style.display = 'none';
     }
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    if('isOpen' in changes && changes['isOpen'].currentValue!==changes['isOpen'].previousValue && !changes['isOpen'].firstChange){
-      if(this.isOpen){
-        this.modal.nativeElement.classList.add('modal-open');
-        this.modal.nativeElement.style.display = 'flex';
-        console.log(this.modal);
-      }else{
-        this.modal.nativeElement.style.display = 'none';
-      }
-    }
-  }
-
-  onClose(){
-    console.log("close got called");
+  onClose() {
     this.onModalClose.emit();
   }
 }

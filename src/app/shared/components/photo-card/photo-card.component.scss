@@ -1,25 +1,26 @@
-:host{
-    .photo-card{
+:host {
+    .photo-card {
         max-width: 550px;
-        &-items{
+        margin: auto;
+        &-items {
             padding-left: 3.75%;
             padding-right: 3.75%;
-            &-shadow{
+            &-shadow {
                 padding: 3.75%;
                 border-radius: 8px;
                 box-shadow: 0 3px 13px rgba(0, 0, 0, 0.19), 0 3px 3px rgba(0, 0, 0, 0.23);
-                &:hover{
+                &:hover {
                     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
                     cursor: pointer;
                 }
             }
-            &-div1{
+            &-div1 {
                 width: 100%;
                 margin-top: 0;
                 margin-bottom: 0;
                 max-width: 1280px;
                 text-align: center;
-                &-imgdiv{
+                &-imgdiv {
                     width: 100%;
                     background-color: black;
                     align-items: center;
@@ -27,24 +28,24 @@
                     height: 365px;
                     overflow: hidden;
                 }
-                &-img{
+                &-img {
                     width: 100%;
                 }
             }
-            &-div2{
+            &-div2 {
                 width: 100%;
                 margin-top: 0;
                 margin-bottom: 0;
                 max-width: 1280px;
                 text-align: center;
                 padding: 5% 0%;
-                &-span{
+                &-span {
                     padding: 14px 8px;
                     font-family: "Montserrat";
                     font-size: 25px;
                 }
             }
-            &-div3{
+            &-div3 {
                 width: 100%;
                 margin-top: 0;
                 margin-bottom: 0;
@@ -55,4 +56,57 @@
             }
         }
     }
+    /* Media queries for responsiveness */
+    @media (max-width: 1200px) {
+        .photo-card {
+            max-width: 450px;
+            margin-top: 18px;
+        }
+        .photo-card-items-div1-imgdiv {
+            height: 300px;
+        }
+        .photo-card-items-div2-span {
+            font-size: 22px;
+        }
+    }
+    
+    @media (max-width: 992px) {
+        .photo-card {
+            max-width: 350px;
+            margin-top: 18px;
+        }
+        .photo-card-items-div1-imgdiv {
+            height: 250px;
+        }
+        .photo-card-items-div2-span {
+            font-size: 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .photo-card {
+            max-width: 300px;
+            margin-top: 18px;
+        }
+        .photo-card-items-div1-imgdiv {
+            height: 200px;
+        }
+        .photo-card-items-div2-span {
+            font-size: 18px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .photo-card {
+            max-width: 300px;
+            margin-top: 18px;
+        }
+        .photo-card-items-div1-imgdiv {
+            height: 200px;
+        }
+        .photo-card-items-div2-span {
+            font-size: 18px;
+        }
+    }
 }
+
